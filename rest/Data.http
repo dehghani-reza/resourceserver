@@ -1,0 +1,5 @@
+### Send request to get data end point
+@bearerToken = token that got from "localhost:8080/oauth2/token" address
+GET http://localhost:8081/data
+Accept: application/json
+Authorization: Bearer {{bearerToken}}
