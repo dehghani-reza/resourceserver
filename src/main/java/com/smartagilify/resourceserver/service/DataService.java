@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class DataService {
 
-	@PreAuthorize("hasAuthority('SCOPE_user.read')")
+	@PreAuthorize("hasAuthority('SCOPE_user.read')") // <- this kind of authorization is great for GraphQL
 	public Map<String, String> getDate() {
 		var jwt = (Jwt) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		return Map.of("message", "hello-> " + jwt.getSubject());
